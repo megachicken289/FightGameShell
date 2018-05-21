@@ -15,9 +15,22 @@ public class FightGameShell {
 		System.out.println("Pick a number between " + Math.min(weaponArray.length) + " and " + Math.min(weaponArraySize) + ": ");
 		int foePick = input.nextLine();
 		
-		
+		// call swtich
+		// call results
 	}
-
+	
+	private void weaponSwitch(int weaponPick) {
+	
+	}
+	
+	private void foePSwitch(int foePick) {
+	
+	}
+	
+	private void mathMath(int weaponPick, int foePick) {
+	
+	}
+	
 	// switch
 	// math
 }
