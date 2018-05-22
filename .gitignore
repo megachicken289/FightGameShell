@@ -480,3 +480,6 @@ ASALocalRun/
 
 # MFractors (Xamarin productivity tool) working folder
 .mfractor/
+### Maven template
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
