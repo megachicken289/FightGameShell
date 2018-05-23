@@ -34,8 +34,8 @@ public class FightGameShellTest {
 		printPickType("foe",foeMap);
 		
 		// call choosePick => int
-		choosePick(input,"weapon",weaponMap);
-		choosePick(input,"foe",foeMap);
+		choosePick("weapon",weaponMap);
+		choosePick("foe",foeMap);
 		
 		// call swtich
 		// call results

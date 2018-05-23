@@ -1,7 +1,5 @@
 package mainShell;
 
-import mainShell.Logic;
-
 import java.util.Scanner;
 import java.util.TreeMap;
 
@@ -30,24 +28,25 @@ public class FightGameShell {
 		
 		// call swtich
 		// call results
-		Scanner input = new Scanner(System.in);
-		
+//		Scanner input = new Scanner(System.in);
 		// call intro
 		intro();
 		
 		// call weaponArray => map
-		TreeMap weaponMap = weaponArrayInit();
-		
-		// call foeArray => map
-		TreeMap foeMap = foeArrayInit();
+		//		// call foeArray => map
+		TreeMap weaponMap   = weaponArrayInit();
+		TreeMap foeMap      = foeArrayInit();
 		
 		// call printPickType
 		printPickType("weapon",weaponMap);
 		printPickType("foe",foeMap);
 		
 		// call choosePick => int
-		choosePick(input,"weapon",weaponMap);
-		choosePick(input,"foe",foeMap);
+		String weapon  = choosePick("weapon",weaponMap);
+		String foe     = choosePick("foe",foeMap);
+		
+		// display chosen results
+		printChosenResults(weapon,foe);
 		
 		// call swtich
 		// call results
