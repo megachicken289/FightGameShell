@@ -22,7 +22,6 @@ public class Logic {
 		// populate weapons field
 		
 		TreeMap<Integer,String> weaponMap = convertToMap(weaponArray);
-//		printPickType("weapon", weaponMap);
 		
 		return weaponMap;
 	}
@@ -36,19 +35,15 @@ public class Logic {
 		// TODO: PLANNED ENHANCEMENT grab size from db
 		// populate foe field
 		
-		TreeMap<Integer,String> foeMap = convertToMap(foeArray);
-//		printPickType("foe", foeMap);
-		
-		return foeMap;
+		return convertToMap(foeArray);
 	}
 	
 	protected static TreeMap<Integer,String> convertToMap(String[] array) {
 		int arrLen = array.length;
 		TreeMap<Integer,String> newMap = new TreeMap<Integer,String>();
-//		newMap.put(0,"trash");
 		for (int i = 1; i<arrLen; i++) {
 			newMap.put(i,array[i]);
-//			System.out.println(String.valueOf(array[i]));
+//			System.out.println(String.valueOf(array[i]));   // keep for debug
 		}
 		
 		return newMap;
@@ -70,42 +65,16 @@ public class Logic {
 			System.out.println("[" + me.getKey() + "]: " + me.getValue());
 		}
 	}
-			
-	@Deprecated // use printPickType
-	private void printWeapons() {
-	}
-	
-	@Deprecated // use printPickType
-	private void printFoes() {
-	}
 	
 	protected static String choosePick(String pickType, TreeMap inMap) {
-		int thePick = -1;
-	
 		System.out.println("Pick a number between " + inMap.firstKey() + " and " +
 				inMap.lastKey() + "that corresponds to the " + pickType + " you wish to choose: ");
 		
-		String pick = siftResults(inMap, input.nextInt());
-		
-		return pick;
+		return siftResults(inMap, input.nextInt());
 	}
 	
 	private static String siftResults(TreeMap inMap, int pick) {
 		return String.valueOf(inMap.get(pick));
-	}
-	
-	@Deprecated
-	private int weaponPick(Scanner input, int weaponArraySize) {
-		System.out.println("Pick a number between " + Math.floor(weaponArraySize) +
-				" and " + Math.ceil(weaponArraySize) + ": ");
-		return input.nextInt();
-	}
-	
-	@Deprecated
-	private int foePick(Scanner input, int foeArraySize) {
-		System.out.println("Pick a number between " + Math.floor(foeArraySize) +
-				" and " + Math.ceil(foeArraySize) + ": ");
-		return input.nextInt();
 	}
 	
 	protected static void printChosenResults(String weapon, String foe){
@@ -115,14 +84,11 @@ public class Logic {
 	}
 	
 	private void weaponSwitch(int weaponPick) {
-	
 	}
 	private void foePSwitch(int foePick) {
-	
 	}
 	
 	private void mathMath(int weaponPick, int foePick) {
-	
 	}
 	
 	protected static void intro() {
