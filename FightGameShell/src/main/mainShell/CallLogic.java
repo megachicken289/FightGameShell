@@ -30,12 +30,15 @@ public class CallLogic {
 		printPickType("foe",foeMap);
 		
 		// call choosePick => int
-		String weapon  = choosePick("weapon",weaponMap);
-		String foe     = choosePick("foe",foeMap);
+//		String weapon  = choosePick("weapon",weaponMap);
+//		String foe     = choosePick("foe",foeMap);
+		
+		pickMap.put("weapon", choosePick("weapon",weaponMap));
+		pickMap.put("foe", choosePick("foe",foeMap));
 		
 		// display chosen results
-		printChosenResults(weapon,foe);
-		
+//		printChosenResults(weapon,foe);
+		printChosenResults(pickMap);
 		// call swtich
 		// call results
 	}

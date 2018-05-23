@@ -77,6 +77,14 @@ public class Logic {
 		return String.valueOf(inMap.get(pick));
 	}
 	
+	protected static void printChosenResults(TreeMap<String,String> pickTypeMap) {
+		for (Map.Entry<String,String> entry : pickTypeMap.entrySet()) {
+			System.out.println("For a " + entry.getKey() + ", you picked: " +
+			entry.getValue());
+		}
+	}
+	
+	@Deprecated
 	protected static void printChosenResults(String weapon, String foe){
 		// TODO: PLANNED ENHANCMENT: merge together the pickTypes
 		System.out.println("For a weapon, you picked: " + weapon);
