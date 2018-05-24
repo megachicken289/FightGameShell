@@ -21,7 +21,7 @@ public class CallLogic {
 		intro();
 		
 		// call weaponArray => map
-		//		// call foeArray => map
+		// call foeArray => map
 		TreeMap weaponMap   = weaponArrayInit();
 		TreeMap foeMap      = foeArrayInit();
 		

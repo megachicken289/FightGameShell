@@ -14,16 +14,38 @@ public class Logic {
 	
 	protected static TreeMap<Integer,String> weaponArrayInit() {
 		String[] weaponArray = {
-				"melee", "pistol","shotgun","MSG","M1BA Assault Rifle",
-				"energy Sword","rocket launcher","sniper","grenade",
+				"melee", "pistol","shotgun","MSG",
+				"M1BA Assault Rifle","energy Sword",
+				"rocket launcher","sniper","grenade",
 				"battle rifle","TEH NOoB COMBO",
+				"plasma pistol", "plasma rifle",
 		};
 		// TODO: PLANNED ENHANCEMENT grab size from db
 		// populate weapons field
 		
-		TreeMap<Integer,String> weaponMap = convertToMap(weaponArray);
+		return convertToMap(weaponArray);
+	}
+	
+	// TODO: integrate to make -> [1,(weaponVal,desc)]
+	protected static TreeMap<Integer,TreeMap<String,String>> weaponArrayInit2() {
+		TreeMap<Integer,TreeMap<String,String>> dummy = new TreeMap<Integer, TreeMap<String, String>>();
+		String[][] weaponArray = {
+				{"melee","beat the man with meat paws"},
+				{"pistol","overpowered pos"},
+				{"shotgun","best flood deterance"},
+				{"msg","for when aiming isn't important"},
+				{"M1BA assault rifle","for when you need to aim, but you also need a compass"},
+				{"energy sword","because playing fair isn't important"},
+				{"rocket launcher","because blowing shit up is fun"},
+				{"sniper","for when you want to camp"},
+				{"grenade","because explosions are fun, but you're also cold"},
+				{"battle rifle","for when you need to aim really well"},
+				{"plasma pistol","sometimes you paintball, sometimes you alien"},
+				{"plasma rifle","when you always paintball"},
+				{"TEH nOoB cOMbO","for when you a cheeter"},
+		};
 		
-		return weaponMap;
+		return dummy;
 	}
 	
 	protected static TreeMap<Integer,String> foeArrayInit() {
@@ -36,6 +58,19 @@ public class Logic {
 		// populate foe field
 		
 		return convertToMap(foeArray);
+	}
+	
+	protected static TreeMap<String,String> mergePickAndDesc() {
+		TreeMap<String,String> dummy = new TreeMap<String, String>();
+		
+		return dummy;
+	}
+	
+	// TODO: Factory where [1,(weaponVal,desc)] for weaponArrayInit2 method
+	protected static TreeMap<Integer,TreeMap<String,String>> giveKeyToPicDesc() {
+		TreeMap<Integer,TreeMap<String,String>> dummy = new TreeMap<Integer, TreeMap<String, String>>();
+		
+		return dummy;
 	}
 	
 	protected static TreeMap<Integer,String> convertToMap(String[] array) {
@@ -62,8 +97,17 @@ public class Logic {
 		Iterator itr = set.iterator();
 		while (itr.hasNext()) {
 			Map.Entry me = (Map.Entry)itr.next();
-			System.out.println("[" + me.getKey() + "]: " + me.getValue());
+			String outputKey = "[" + me.getKey() + "] | ";
+			String outputValue = String.valueOf(me.getValue());
+			int outputTotalLength = outputKey.length() + outputValue.length();
+			
+			System.out.println(outputKey + outputValue);
+			for (int i = 0; i < outputTotalLength; i++) {
+				System.out.printf("=");
+			}
+			System.out.println();
 		}
+		System.out.println();
 	}
 	
 	protected static String choosePick(String pickType, TreeMap inMap) {
@@ -97,6 +141,11 @@ public class Logic {
 	}
 	
 	private void mathMath(int weaponPick, int foePick) {
+	}
+	
+	private static void patchPickAndDesc(TreeMap<Integer,String> pick,
+	                                     TreeMap<String,String> pickDesc) {
+				
 	}
 	
 	protected static void intro() {
