@@ -30,8 +30,9 @@ public class FightGameShellTest {
 		TreeMap foeMap = foeArrayInit();
 		
 		// call printPickType
-		printPickType("weapon",weaponMap);
-		printPickType("foe",foeMap);
+//		printPickType("weapon",weaponMap);
+//		printPickType("foe",foeMap);
+		
 		
 		// call choosePick => int
 		choosePick("weapon",weaponMap);
