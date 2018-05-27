@@ -127,11 +127,14 @@ public class Logic {
 			for (i=0; i < arrLenW; i++) {
 			newMap.put(inArray[i][0], inArray[i][1]);
 			System.out.println("[" + i + "]" + inArray[i][0] + " | " + inArray[i][1]);
-//			System.out.println(String.valueOf(array[i]));   // keep for debug
 		}
 	}
 		
 		return newMap;
+	}
+	
+	protected static void separateIntFromTreeMap() {
+	
 	}
 	
 //	@Deprecated
